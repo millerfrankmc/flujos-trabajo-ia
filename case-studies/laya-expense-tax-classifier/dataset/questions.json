@@ -1,0 +1,52 @@
+{
+  "tipo_gasto": {
+    "type": "choice",
+    "instructions": "Clasifica la naturaleza principal de la rendición usando solo los hechos proporcionados.",
+    "criteria": {
+      "software": "suscripciones, licencias o servicios digitales",
+      "alimentacion": "comidas, refrigerios o atención vinculada a personas",
+      "transporte": "movilidad, combustible, taxi o transporte",
+      "suministros": "materiales o bienes operativos",
+      "servicios_profesionales": "servicios contratados de personas o empresas",
+      "otro": "no encaja en las categorías anteriores"
+    }
+  },
+  "renta_tratamiento": {
+    "type": "choice",
+    "instructions": "Emite una hipótesis preliminar de tratamiento para Impuesto a la Renta. No afirmes aceptación por SUNAT y usa condicionado o insuficiente_evidencia cuando falte información.",
+    "criteria": {
+      "probable_deducible": "evidencia preliminar de relación empresarial y sustento suficiente",
+      "probable_reparable": "podría ser gasto contable pero requerir ajuste o adición tributaria",
+      "condicionado": "depende de límites, causalidad, uso o datos que deben verificarse",
+      "insuficiente_evidencia": "no hay información para proponer un tratamiento"
+    }
+  },
+  "igv_credito": {
+    "type": "choice",
+    "instructions": "Emite una hipótesis preliminar sobre el crédito fiscal de IGV. Separa esta decisión de la deducibilidad para renta.",
+    "criteria": {
+      "probable_creditable": "hipótesis preliminar favorable, siempre sujeta a verificación profesional",
+      "probable_no_creditable": "hipótesis preliminar desfavorable",
+      "condicionado": "requiere verificar comprobante, uso y requisitos",
+      "insuficiente_evidencia": "faltan hechos críticos"
+    }
+  },
+  "documentacion": {
+    "type": "choice",
+    "instructions": "Clasifica la calidad de la evidencia disponible para el prototipo, sin afirmar validez legal definitiva.",
+    "criteria": {
+      "completa": "los campos del caso están presentes",
+      "incompleta": "faltan datos relevantes",
+      "inconsistente": "hay contradicciones o señales de riesgo"
+    }
+  },
+  "revision": {
+    "type": "choice",
+    "instructions": "Indica el nivel de revisión necesario antes de registrar o usar el resultado.",
+    "criteria": {
+      "estandar": "revisión humana normal",
+      "contador": "revisión obligatoria de contador por riesgo o incertidumbre",
+      "bloqueada": "no continuar hasta completar o corregir evidencia"
+    }
+  }
+}
