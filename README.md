@@ -15,12 +15,32 @@ Este repositorio contiene ejemplos ficticios para aprender a diseñar flujos de 
 - Separar acuerdos, ideas y preguntas pendientes.
 - Diseñar una revisión humana antes de cualquier acción externa.
 
-## Contenido provisional
+## Contenido
 
 - `GUIA.md` — guía práctica.
 - `datos/` — casos ficticios.
 - `instrucciones/` — instrucciones reutilizables.
 - `fichas/` — plantillas para diseñar tu propio flujo.
+- `demo/` — procedimientos, resultados de referencia y registros de ejecución.
+- `src/flujos_ia/` — motor ejecutable de las demos.
+- `tests/` — pruebas automatizadas.
+- `demo/results/` — salidas generadas por el motor offline.
+
+## Ejecutar el proyecto
+
+Requiere Python 3.11 o superior. El comando `python` de algunos sistemas puede apuntar a Python 2; utiliza `python3`.
+
+```bash
+PYTHONPATH=src python3 -m unittest discover -s tests -v
+PYTHONPATH=src python3 -m flujos_ia --demo all
+```
+
+Las salidas se generan en `demo/results/`:
+
+- `demo-1-organizar-solicitudes.md`
+- `demo-2-comparar-propuestas.md`
+
+El modo actual es **offline y determinista**: las reglas de control y la revisión son reproducibles sin API. Esto permite probar los límites antes de añadir un modelo externo. La capa LLM, cuando se incorpore, no debe aprobar, comprar, enviar ni modificar sistemas; solo puede preparar una propuesta que pase por el mismo control humano.
 
 ## Límites
 
